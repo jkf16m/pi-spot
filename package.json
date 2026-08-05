@@ -7,8 +7,14 @@
       "./src/index.ts"
     ]
   },
-  "keywords": ["pi-package", "pi", "pi-coding-agent", "pi-extension"],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-coding-agent",
+    "pi-extension"
+  ],
   "devDependencies": {
-    "@types/node": "^26.1.2"
+    "@types/node": "^26.1.2",
+    "typescript": "^7.0.2"
   }
 }
