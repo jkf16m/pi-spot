@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/jkf16m/pi-spot/compare/v0.2.0...v0.2.1) (2026-08-05)
+
+
+### Bug Fixes
+
+* empty commit to test release trigger ([fb2a111](https://github.com/jkf16m/pi-spot/commit/fb2a11176abf55d30a40b5057e1ff4c804da53ec))
+
 ## [0.2.0](https://github.com/jkf16m/pi-spot/compare/v0.1.2...v0.2.0) (2026-08-05)
 
 
