@@ -3,7 +3,7 @@ import { loadConfig } from "./config";
 import { findMarkedFiles } from "./scanner";
 
 
-// <pi*> add documentation here please
+//[[pi]] add documentation here please
 function getFocusInstructions(marker: string): string {
   return `You have been given a file to work on. Rules:
 1. Edit as few files as possible
@@ -26,11 +26,11 @@ export default function (pi: ExtensionAPI) {
         return;
       }
 
-      // <pi*> I'm gonna guess, you're only getting the first file here.
+      // [[pi]] I'm gonna guess, you're only getting the first file here.
       // that's perfect.
       const target = files[0];
 
-      // <pi*> yeah... make this more understandable, this is a messy line, you can
+      // [[pi]] yeah... make this more understandable, this is a messy line, you can
       // divide in multiple lines.
       const fileContent = "[File: " + target.path + "]\n```\n" + target.content + "\n```";
 
