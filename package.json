@@ -4,6 +4,11 @@
   "private": true,
   "type": "module",
   "pi": {
-    "extensions": ["./src/index.ts"]
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2"
   }
 }
