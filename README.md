@@ -7,7 +7,7 @@ A [Pi](https://github.com/earendil-works/pi-coding-agent) extension for focused,
 `pi-spot` scans your project for files containing a configurable marker (default `<pi*>`, or `[[pi]]` as configured here). When you run `/spot`, it:
 
 1. Finds all marked files in the project
-2. Picks the first one (single-file focus mode)
+2. Picks the first matching file (single-file focus mode)
 3. Injects the file content into the agent session
 4. Sends instructions telling the agent to make **minimal, targeted changes** — only following the marked instructions
 
