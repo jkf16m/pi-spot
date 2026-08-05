@@ -13,8 +13,8 @@ const DEFAULTS: FocusConfig = {
 };
 
 export function loadConfig(ctx: ExtensionContext): FocusConfig {
-  const globalPath = join(homedir(), ".pi", "pi-focus.json");
-  const projectPath = join(ctx.cwd, CONFIG_DIR_NAME, "pi-focus.json");
+  const globalPath = join(homedir(), ".pi", "pi-spot.json");
+  const projectPath = join(ctx.cwd, CONFIG_DIR_NAME, "pi-spot.json");
 
   let config = { ...DEFAULTS };
 

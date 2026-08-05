@@ -36,7 +36,7 @@ function walk(
   }
 
   for (const entry of entries) {
-    if (entry.name.startsWith(".") || entry.name === "node_modules" || entry.name === "pi-focus.json") continue;
+    if (entry.name.startsWith(".") || entry.name === "node_modules" || entry.name === "pi-spot.json") continue;
 
     const fullPath = join(dir, entry.name);
 

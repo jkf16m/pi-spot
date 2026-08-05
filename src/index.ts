@@ -8,7 +8,7 @@ import { findMarkedFiles } from "./scanner";
  * These instructions tell the agent to make minimal changes and only follow
  * markers matching the configured pattern.
  */
-function getFocusInstructions(marker: string): string {
+function getSpotInstructions(marker: string): string {
   return `You have been given a file to work on. Rules:
 1. Edit as few files as possible
 2. Only follow instructions marked with ${marker} in the code
@@ -17,7 +17,7 @@ function getFocusInstructions(marker: string): string {
 }
 
 export default function (pi: ExtensionAPI) {
-  pi.registerCommand("focus", {
+  pi.registerCommand("spot", {
     description: "Scan for marked files and inject into session",
     handler: async (args, ctx) => {
       const config = loadConfig(ctx);
@@ -44,7 +44,7 @@ export default function (pi: ExtensionAPI) {
       // Inject file content
       pi.sendMessage(
         {
-          customType: "pi-focus",
+          customType: "pi-spot",
           content: fileContent,
           display: true,
         },
@@ -52,7 +52,7 @@ export default function (pi: ExtensionAPI) {
       );
 
       // Trigger agent with instructions
-      pi.sendUserMessage(getFocusInstructions(config.marker), { deliverAs: "followUp" });
+      pi.sendUserMessage(getSpotInstructions(config.marker), { deliverAs: "followUp" });
 
       ctx.ui.notify(`Focused: ${target.path}`, "info");
     },
