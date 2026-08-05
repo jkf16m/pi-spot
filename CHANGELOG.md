@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/jkf16m/pi-spot/compare/v0.2.1...v0.2.2) (2026-08-05)
+
+
+### Bug Fixes
+
+* correct release-please output name for publish job ([a20d4a2](https://github.com/jkf16m/pi-spot/commit/a20d4a25db1d56710b7d3b9464c2f3dee30782a6))
+
 ## [0.2.1](https://github.com/jkf16m/pi-spot/compare/v0.2.0...v0.2.1) (2026-08-05)
 
 
