@@ -3,7 +3,11 @@ import { loadConfig } from "./config";
 import { findMarkedFiles } from "./scanner";
 
 
-//[[pi]] add documentation here please
+/**
+ * Returns the system-level focus instructions injected into the agent session.
+ * These instructions tell the agent to make minimal changes and only follow
+ * markers matching the configured pattern.
+ */
 function getFocusInstructions(marker: string): string {
   return `You have been given a file to work on. Rules:
 1. Edit as few files as possible
@@ -26,13 +30,16 @@ export default function (pi: ExtensionAPI) {
         return;
       }
 
-      // [[pi]] I'm gonna guess, you're only getting the first file here.
-      // that's perfect.
+      // Use only the first marked file — the extension is designed for
+      // single-file focus mode, not batch editing.
       const target = files[0];
 
-      // [[pi]] yeah... make this more understandable, this is a messy line, you can
-      // divide in multiple lines.
-      const fileContent = "[File: " + target.path + "]\n```\n" + target.content + "\n```";
+      const fileContent = [
+        `[File: ${target.path}]`,
+        "```",
+        target.content,
+        "```",
+      ].join("\n");
 
       // Inject file content
       pi.sendMessage(
