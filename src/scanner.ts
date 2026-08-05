@@ -28,9 +28,9 @@ function walk(
 ): void {
   if (depth > maxDepth) return;
 
-  let entries: ReturnType<typeof readdirSync>;
+  let entries: import("node:fs").Dirent<string>[];
   try {
-    entries = readdirSync(dir, { withFileTypes: true });
+    entries = readdirSync(dir, { withFileTypes: true, encoding: "utf-8" }) as import("node:fs").Dirent<string>[];
   } catch {
     return;
   }
