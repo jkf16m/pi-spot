@@ -20,6 +20,9 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: npm ci
       - run: npx tsc --noEmit
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - id: version
         run: |
           VERSION=$(npm version patch --no-git-tag-version)
